@@ -1,0 +1,9 @@
+version: '2'
+services:
+  kafka-connect:
+    image: kbzjung359/kafka-arm64v8:2.5.0
+    ports:
+      - "8081:8081"
+    command: ["/opt/kafka/bin/connect-standalone.sh", "/twitter/standalone.properties", "/twitter/connector.properties"]
+    volumes:
+      - .:/twitter
