@@ -15,7 +15,8 @@ public class CryptoApp {
         Properties config = new Properties();
         config.put(StreamsConfig.APPLICATION_ID_CONFIG, "dev");
         config.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "balns.iptime.org:9092");
-        
+        config.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
+
         KafkaStreams streams = new KafkaStreams(topology, config);
         Runtime.getRuntime().addShutdownHook(new Thread(streams::close));
 
