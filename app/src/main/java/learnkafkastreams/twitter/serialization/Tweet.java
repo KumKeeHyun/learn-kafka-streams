@@ -23,7 +23,7 @@ public class Tweet {
         private Long id;
         
         @SerializedName("Lang")
-        private Boolean lang;
+        private String lang;
         
         @SerializedName("Retweet")
         private Boolean retweet;
